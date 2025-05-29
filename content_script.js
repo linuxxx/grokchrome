@@ -4,6 +4,11 @@ document.addEventListener('mouseup', handleMouseUp);
 document.addEventListener('mousedown', handleMouseDown);
 
 function handleMouseUp(event) {
+  // 如果是右键点击，则不执行任何操作，以确保上下文菜单正常显示
+  if (event.button === 2) {
+    return;
+  }
+
   // 确保不是在查询按钮上触发的 mouseup
   if (queryButton && (event.target === queryButton || queryButton.contains(event.target))) {
     return;
@@ -108,6 +113,11 @@ function handleMouseUp(event) {
 }
 
 function handleMouseDown(event) {
+  // 如果是右键点击，则不执行任何操作
+  if (event.button === 2) {
+    return;
+  }
+
   // 如果点击发生在查询按钮之外，则移除按钮。
   // mouseup 事件会负责在有新选区时重新创建按钮。
   if (queryButton && event.target !== queryButton && !queryButton.contains(event.target)) {
