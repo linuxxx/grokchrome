@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Grok 快速查询",
+  "version": "0.1.0",
+  "description": "通过右键选中文本快速在 Grok 中提问。",
+  "permissions": [
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "css": ["content_script.css"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/favicon.ico"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

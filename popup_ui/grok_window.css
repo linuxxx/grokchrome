@@ -1,0 +1,41 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #f8f9fa; /* Light gray background as a fallback */
+    font-family: sans-serif;
+}
+
+#grok-iframe {
+    width: 100%;
+    height: calc(100% - 40px); /* Adjusted for controls height + padding */
+    border: none;
+    display: block; /* To remove any potential space below the iframe */
+}
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #e9ecef; /* Slightly darker gray for controls */
+    height: 30px; /* Actual height of the control bar */
+    box-sizing: border-box;
+    border-top: 1px solid #dee2e6; /* Separator line */
+}
+
+#close-button {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#close-button:hover {
+    background-color: #5a6268; /* Darker shade on hover */
+}
