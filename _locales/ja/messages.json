@@ -1,0 +1,89 @@
+{
+  "extensionName": {
+    "message": "SelectAskAI"
+  },
+  "extensionDescription": {
+    "message": "テキストを選択してAIエンジンに瞬時に質問。Grok、ChatGPTなどに対応。"
+  },
+  "settingsTitle": {
+    "message": "SelectAskAI 設定"
+  },
+  "defaultEngine": {
+    "message": "デフォルト検索エンジン"
+  },
+  "customEngine": {
+    "message": "カスタムエンジン"
+  },
+  "engineName": {
+    "message": "エンジン名："
+  },
+  "engineNamePlaceholder": {
+    "message": "例：Claude"
+  },
+  "queryUrlTemplate": {
+    "message": "クエリURLテンプレート："
+  },
+  "queryUrlPlaceholder": {
+    "message": "例：https://claude.ai/chat?q={query}"
+  },
+  "queryPlaceholderHint": {
+    "message": "検索テキストのプレースホルダーとして {query} を使用"
+  },
+  "addCustomEngine": {
+    "message": "カスタムエンジンを追加"
+  },
+  "saveSettings": {
+    "message": "設定を保存"
+  },
+  "resetSettings": {
+    "message": "デフォルトにリセット"
+  },
+  "deleteEngine": {
+    "message": "削除"
+  },
+  "loadSettingsError": {
+    "message": "設定の読み込みに失敗しました"
+  },
+  "fillNameAndUrl": {
+    "message": "エンジン名とURLを入力してください"
+  },
+  "urlMustContainQuery": {
+    "message": "URLには {query} プレースホルダーが必要です"
+  },
+  "customEngineAdded": {
+    "message": "カスタムエンジンが正常に追加されました"
+  },
+  "customEngineDeleted": {
+    "message": "カスタムエンジンが正常に削除されました"
+  },
+  "settingsSaved": {
+    "message": "設定が正常に保存されました"
+  },
+  "saveSettingsError": {
+    "message": "設定の保存に失敗しました"
+  },
+  "resetConfirm": {
+    "message": "すべての設定をリセットしますか？これによりすべてのカスタムエンジンが削除されます。"
+  },
+  "settingsReset": {
+    "message": "設定がデフォルトにリセットされました"
+  },
+  "resetSettingsError": {
+    "message": "設定のリセットに失敗しました"
+  },
+  "language": {
+    "message": "言語"
+  },
+  "querySuffix": {
+    "message": "クエリサフィックス"
+  },
+  "querySuffixLabel": {
+    "message": "クエリサフィックス："
+  },
+  "querySuffixPlaceholder": {
+    "message": "例：日本語で回答してください"
+  },
+  "querySuffixHint": {
+    "message": "このテキストは選択されたテキストの後に自動的に追加されます"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "extensionName": {
+    "message": "SelectAskAI"
+  },
+  "extensionDescription": {
+    "message": "选中文本，一键问AI。支持Grok、ChatGPT等多种AI引擎。"
+  },
+  "settingsTitle": {
+    "message": "SelectAskAI 设置"
+  },
+  "defaultEngine": {
+    "message": "默认搜索引擎"
+  },
+  "customEngine": {
+    "message": "自定义引擎"
+  },
+  "engineName": {
+    "message": "引擎名称："
+  },
+  "engineNamePlaceholder": {
+    "message": "例如：Claude"
+  },
+  "queryUrlTemplate": {
+    "message": "查询URL模板："
+  },
+  "queryUrlPlaceholder": {
+    "message": "例如：https://claude.ai/chat?q={query}"
+  },
+  "queryPlaceholderHint": {
+    "message": "使用 {query} 作为查询文本的占位符"
+  },
+  "addCustomEngine": {
+    "message": "添加自定义引擎"
+  },
+  "saveSettings": {
+    "message": "保存设置"
+  },
+  "resetSettings": {
+    "message": "重置为默认"
+  },
+  "deleteEngine": {
+    "message": "删除"
+  },
+  "loadSettingsError": {
+    "message": "加载设置失败"
+  },
+  "fillNameAndUrl": {
+    "message": "请填写引擎名称和URL"
+  },
+  "urlMustContainQuery": {
+    "message": "URL必须包含 {query} 占位符"
+  },
+  "customEngineAdded": {
+    "message": "自定义引擎添加成功"
+  },
+  "customEngineDeleted": {
+    "message": "自定义引擎删除成功"
+  },
+  "settingsSaved": {
+    "message": "设置保存成功"
+  },
+  "saveSettingsError": {
+    "message": "保存设置失败"
+  },
+  "resetConfirm": {
+    "message": "确定要重置所有设置吗？这将删除所有自定义引擎。"
+  },
+  "settingsReset": {
+    "message": "设置已重置为默认值"
+  },
+  "resetSettingsError": {
+    "message": "重置设置失败"
+  },
+  "language": {
+    "message": "语言"
+  },
+  "querySuffix": {
+    "message": "查询后缀"
+  },
+  "querySuffixLabel": {
+    "message": "查询后缀："
+  },
+  "querySuffixPlaceholder": {
+    "message": "例如：用中文回答"
+  },
+  "querySuffixHint": {
+    "message": "此文本将自动添加到选中文本的后面"
+  }
+}

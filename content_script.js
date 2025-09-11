@@ -31,31 +31,25 @@ function handleMouseUp(event) {
       queryButton.textContent = ''; // 清空文本内容
       queryButton.style.position = 'absolute';
       queryButton.style.zIndex = '99999'; // 确保按钮在顶层
-      // queryButton.style.padding = '2px'; // 根据图标大小和视觉效果调整
-      // queryButton.style.border = '1px solid #ccc'; // 可选：添加边框以便调试
-      // queryButton.style.backgroundColor = 'white'; // 可选：背景色
 
       // 创建图像元素
       const img = document.createElement('img');
       img.src = chrome.runtime.getURL('icons/favicon.ico');
-      img.style.width = '16px';
-      img.style.height = '16px';
       img.style.verticalAlign = 'middle';
-      img.alt = 'Grok Query';
 
       // 将图像附加到按钮
       queryButton.appendChild(img);
-      
+
       document.body.appendChild(queryButton); // 先添加到DOM，以便获取尺寸
 
-      // 定位按钮 - 基于鼠标释放位置
-      // 将按钮初始定位在鼠标事件发生的位置附近
-      let targetTop = event.pageY;
-      let targetLeft = event.pageX + 15; // 在鼠标指针右侧15px
+      // 定位按钮 - 基于选中文本的位置
+      // 将按钮定位在选中文本的右下方
+      let targetTop = rect.bottom + window.scrollY + 5; // 选中文本下方5px
+      let targetLeft = rect.right + window.scrollX + 5; // 选中文本右侧5px
 
       queryButton.style.top = `${targetTop}px`; // 临时设置，以便获取高度
       queryButton.style.left = `${targetLeft}px`;
-      
+
       // 动态调整位置，确保按钮完全可见
       // 使用 setTimeout 确保按钮（尤其是图片）已渲染并具有尺寸
       setTimeout(() => {
@@ -64,28 +58,28 @@ function handleMouseUp(event) {
         const buttonHeight = queryButton.offsetHeight;
         const buttonWidth = queryButton.offsetWidth;
 
-        // 尝试将按钮垂直居中于鼠标Y坐标
-        let newTop = targetTop - (buttonHeight / 2);
+        // 使用选中文本的位置
+        let newTop = targetTop;
         let newLeft = targetLeft;
-        
-        // 边界检查
-        // 检查右边界 (视口宽度 + 滚动偏移 - 按钮宽度 - 边距)
+
+        // 边界检查和智能调整
+        // 检查右边界，如果超出则显示在选中文本左侧
         if ((newLeft + buttonWidth) > (window.scrollX + window.innerWidth - 5)) {
-            newLeft = window.scrollX + window.innerWidth - buttonWidth - 5;
+          newLeft = rect.left + window.scrollX - buttonWidth - 5; // 显示在选中文本左侧
         }
-        // 检查左边界 (滚动偏移 + 边距)
+        // 检查左边界
         if (newLeft < (window.scrollX + 5)) {
-            newLeft = window.scrollX + 5;
+          newLeft = window.scrollX + 5;
         }
-        // 检查下边界 (视口高度 + 滚动偏移 - 按钮高度 - 边距)
+        // 检查下边界，如果超出则显示在选中文本上方
         if ((newTop + buttonHeight) > (window.scrollY + window.innerHeight - 5)) {
-            newTop = window.scrollY + window.innerHeight - buttonHeight - 5;
+          newTop = rect.top + window.scrollY - buttonHeight - 5; // 显示在选中文本上方
         }
-        // 检查上边界 (滚动偏移 + 边距)
+        // 检查上边界
         if (newTop < (window.scrollY + 5)) {
-            newTop = window.scrollY + 5;
+          newTop = window.scrollY + 5;
         }
-        
+
         queryButton.style.top = `${newTop}px`;
         queryButton.style.left = `${newLeft}px`;
 
@@ -95,11 +89,11 @@ function handleMouseUp(event) {
       queryButton.addEventListener('click', () => {
         const currentSelectedText = window.getSelection().toString().trim();
         if (currentSelectedText) {
-          chrome.runtime.sendMessage({ type: "GROK_QUERY", text: currentSelectedText }, (response) => {
+          chrome.runtime.sendMessage({ type: "AI_QUERY", text: currentSelectedText }, (response) => {
             if (chrome.runtime.lastError) {
-              console.error("Grok Query Error:", chrome.runtime.lastError.message);
+              console.error("AI Query Error:", chrome.runtime.lastError.message);
             } else {
-              console.log("Grok Query Sent:", currentSelectedText, "Response:", response);
+              console.log("AI Query Sent:", currentSelectedText, "Response:", response);
             }
           });
         }
@@ -142,4 +136,4 @@ function removeQueryButton() {
 //   }
 // });
 
-console.log("Grok Quick Query content script loaded. Icon button update.");
+console.log("AI Quick Query content script loaded. Icon button update.");

@@ -1,0 +1,89 @@
+{
+  "extensionName": {
+    "message": "SelectAskAI"
+  },
+  "extensionDescription": {
+    "message": "Select any text and instantly ask AI engines like Grok, ChatGPT, and more."
+  },
+  "settingsTitle": {
+    "message": "SelectAskAI Settings"
+  },
+  "defaultEngine": {
+    "message": "Default Search Engine"
+  },
+  "customEngine": {
+    "message": "Custom Engines"
+  },
+  "engineName": {
+    "message": "Engine Name:"
+  },
+  "engineNamePlaceholder": {
+    "message": "e.g., Claude"
+  },
+  "queryUrlTemplate": {
+    "message": "Query URL Template:"
+  },
+  "queryUrlPlaceholder": {
+    "message": "e.g., https://claude.ai/chat?q={query}"
+  },
+  "queryPlaceholderHint": {
+    "message": "Use {query} as placeholder for the search text"
+  },
+  "addCustomEngine": {
+    "message": "Add Custom Engine"
+  },
+  "saveSettings": {
+    "message": "Save Settings"
+  },
+  "resetSettings": {
+    "message": "Reset to Default"
+  },
+  "deleteEngine": {
+    "message": "Delete"
+  },
+  "loadSettingsError": {
+    "message": "Failed to load settings"
+  },
+  "fillNameAndUrl": {
+    "message": "Please fill in engine name and URL"
+  },
+  "urlMustContainQuery": {
+    "message": "URL must contain {query} placeholder"
+  },
+  "customEngineAdded": {
+    "message": "Custom engine added successfully"
+  },
+  "customEngineDeleted": {
+    "message": "Custom engine deleted successfully"
+  },
+  "settingsSaved": {
+    "message": "Settings saved successfully"
+  },
+  "saveSettingsError": {
+    "message": "Failed to save settings"
+  },
+  "resetConfirm": {
+    "message": "Are you sure you want to reset all settings? This will delete all custom engines."
+  },
+  "settingsReset": {
+    "message": "Settings have been reset to default"
+  },
+  "resetSettingsError": {
+    "message": "Failed to reset settings"
+  },
+  "language": {
+    "message": "Language"
+  },
+  "querySuffix": {
+    "message": "Query Suffix"
+  },
+  "querySuffixLabel": {
+    "message": "Query Suffix:"
+  },
+  "querySuffixPlaceholder": {
+    "message": "e.g., answer in English"
+  },
+  "querySuffixHint": {
+    "message": "This text will be automatically added after the selected text"
+  }
+}

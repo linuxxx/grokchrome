@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>i18n Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-item { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+        .key { font-weight: bold; color: #333; }
+        .value { color: #666; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <h1>SelectAskAI i18n Test</h1>
+    <div id="test-results"></div>
+    
+    <script>
+        const messages = [
+            'extensionName',
+            'extensionDescription', 
+            'settingsTitle',
+            'defaultEngine',
+            'customEngine',
+            'engineName',
+            'engineNamePlaceholder',
+            'queryUrlTemplate',
+            'queryUrlPlaceholder',
+            'queryPlaceholderHint',
+            'addCustomEngine',
+            'saveSettings',
+            'resetSettings',
+            'deleteEngine',
+            'querySuffix',
+            'querySuffixLabel',
+            'querySuffixPlaceholder',
+            'querySuffixHint'
+        ];
+        
+        const resultsDiv = document.getElementById('test-results');
+        
+        messages.forEach(key => {
+            const message = chrome.i18n.getMessage(key);
+            const div = document.createElement('div');
+            div.className = 'test-item';
+            div.innerHTML = `
+                <span class="key">${key}:</span>
+                <span class="value">${message || 'NOT FOUND'}</span>
+            `;
+            resultsDiv.appendChild(div);
+        });
+        
+        // 显示当前语言
+        const langDiv = document.createElement('div');
+        langDiv.innerHTML = `<h2>Current Language: ${chrome.i18n.getUILanguage()}</h2>`;
+        document.body.insertBefore(langDiv, resultsDiv);
+    </script>
+</body>
+</html>

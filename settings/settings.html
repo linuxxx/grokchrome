@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="settingsTitle">SelectAskAI Settings</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="container">
+        <h1 data-i18n="settingsTitle">SelectAskAI Settings</h1>
+        
+        <div class="setting-group">
+            <h2 data-i18n="defaultEngine">Default Search Engine</h2>
+            <div class="engine-options">
+                <label class="engine-option">
+                    <input type="radio" name="engine" value="grok" id="grok-radio">
+                    <span class="engine-name">Grok</span>
+                    <span class="engine-url">grok.com</span>
+                </label>
+                
+                <label class="engine-option">
+                    <input type="radio" name="engine" value="chatgpt" id="chatgpt-radio">
+                    <span class="engine-name">ChatGPT</span>
+                    <span class="engine-url">chatgpt.com</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <h2 data-i18n="querySuffix">Query Suffix</h2>
+            <div class="query-suffix-setting">
+                <label for="query-suffix" data-i18n="querySuffixLabel">Query Suffix:</label>
+                <input type="text" id="query-suffix" data-i18n-placeholder="querySuffixPlaceholder">
+                <small data-i18n="querySuffixHint">This text will be automatically added after the selected text</small>
+            </div>
+        </div>
+
+        <div class="setting-group">
+            <h2 data-i18n="customEngine">Custom Engines</h2>
+            <div class="custom-engine">
+                <label for="custom-name" data-i18n="engineName">Engine Name:</label>
+                <input type="text" id="custom-name" data-i18n-placeholder="engineNamePlaceholder">
+                
+                <label for="custom-url" data-i18n="queryUrlTemplate">Query URL Template:</label>
+                <input type="text" id="custom-url" data-i18n-placeholder="queryUrlPlaceholder">
+                <small data-i18n="queryPlaceholderHint">Use {query} as placeholder for the search text</small>
+                
+                <button id="add-custom-engine" data-i18n="addCustomEngine">Add Custom Engine</button>
+            </div>
+            
+            <div id="custom-engines-list"></div>
+        </div>
+
+        <div class="actions">
+            <button id="save-settings" class="primary" data-i18n="saveSettings">Save Settings</button>
+            <button id="reset-settings" data-i18n="resetSettings">Reset to Default</button>
+        </div>
+        
+        <div id="status-message"></div>
+    </div>
+    
+    <script src="settings.js"></script>
+</body>
+</html>
